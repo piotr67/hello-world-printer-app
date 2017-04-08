@@ -17,7 +17,7 @@ docker_build:
 
 USERNAME=piotr67
 TAG=$(USERNAME)/hello-world-printer
-docker_push:
+docker_push: docker_build
 	docker login --username $(USERNAME) --password $(PASSWORD) ; \
 	docker tag hello-world-printer $(TAG); \
 	docker push $(TAG); \
