@@ -4,7 +4,7 @@ from formater import SUPPORTED, PLAIN
 from flask import request
 
 moje_imie = "Piotr"
-msg = "Witaj swiecie"
+msg = "itaj swiecie"
 
 @app.route('/')
 def index():
