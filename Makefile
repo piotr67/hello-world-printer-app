@@ -7,7 +7,7 @@ deps:
 # pip install flake8
 
 lint:
-	flake8 hello_world_ test
+	flake8 hello_world test
 
 test:
 	PYTHONPATH=. py.test --verbose -s
