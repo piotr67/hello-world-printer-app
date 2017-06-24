@@ -4,12 +4,12 @@ WORKDIR /tmp
 ADD requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 
-RUN mkdir -p /usr/src/hello-world-printer
-ADD hello_world/ /usr/src/hello-world-printer/hello-world/
+RUN mkdir -p /usr/src/hello_world_printer/
+ADD hello_world/ /usr/src/hello_world_printer/hello_world/
 
-ADD main.py /usr/src/hello-world-printer
-RUN ls /usr/src/hello-world-printer
+ADD main.py /usr/src/hello_world_printer/
+RUN ls /usr/src/hello_world_printer
 
-CMD PYTHONPATH=$PYTHONPATH: /usr/src/hello-world-printer \
-	FLASK_APP=hello-world flask run --host=0.0.0.0
+CMD PYTHONPATH=$PYTHONPATH:/usr/src/hello_world_printer \
+	FLASK_APP=hello_world flask run -host=0.0.0.0
   
